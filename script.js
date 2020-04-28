@@ -1,26 +1,30 @@
-//GAME
+//Random Damage
 const randomDamage = _ => Math.floor(Math.random() * 10) + 1;
 
+//Choose Option
 const chooseOption = (opt1, opt2) => {
     let randNum = Math.floor(Math.random() * 2);
     return randNum === 0 ? opt1 : opt2;
 };
 
+// Attack Player
 const attackPlayer = function (health) {
     return health - randomDamage();
 };
-
+// Log Health 
 const logHealth = (player, health) => {
     console.log(`${player} health: ${health}`);
 }
-
+// Log Death
 const logDeath = (winner, loser) => {
     console.log(`${winner} defeated ${loser}`);
 }
+// Is Dead? 
 const isDead = (health) => {
     return health <= 0 ? true : false;
 };
 
+//FIGHT!!
 function fight(player1, player2, player1Health, player2Health) {
     while (true) {
         let attacker = chooseOption(player1, player2);
@@ -43,4 +47,6 @@ function fight(player1, player2, player1Health, player2Health) {
         }
     }
 }
+
+//CALL FUNCTION
 fight("Hiero", "Mayor", 100, 100);
