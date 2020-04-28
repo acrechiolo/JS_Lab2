@@ -12,17 +12,12 @@ const attackPlayer = function (health) {
     return health - randomDamage();
 };
 // Log Health 
-const logHealth = (player, health) => {
-    console.log(`${player} health: ${health}`);
-}
+const logHealth = (player, health) => console.log(`${player} health: ${health}`);
 // Log Death
-const logDeath = (winner, loser) => {
-    console.log(`${winner} defeated ${loser}`);
-}
+const logDeath = (winner, loser) => console.log(`${winner} defeated ${loser}`);
+
 // Is Dead? 
-const isDead = (health) => {
-    return health <= 0 ? true : false;
-};
+const isDead = (health) => health <= 0 ? true : false;
 
 //FIGHT!!
 function fight(player1, player2, player1Health, player2Health) {
